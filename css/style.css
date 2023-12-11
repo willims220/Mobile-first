@@ -1,0 +1,486 @@
+
+
+:root {
+    /* colors */
+    --bitcoin-orange: #F7931A;
+    --soft-orange: #ffe9d5;
+    --secundary-blue: #1A9AF7;
+    --soft-blue: #e7f5ff;
+    --warm-black:#201e1c ;
+    --black:#282623;
+    --grey:#bababa;
+    --dark-gray: #757575;
+    --off-white:#faf8f7;
+    --just-white:#fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+font-size: 62.5%; 
+font-family:"DM Sans";
+}
+
+.header {
+background: linear-gradient(to bottom left, #201E1C,#F7931A);
+height: 280px;
+width: 100%;
+text-align: center;
+position: relative;
+min-width: 320px;
+}
+
+.header-logo-container {
+/* margin-top: 20px; */
+padding-top: 20px;
+}
+
+.header-paragraph {
+font-size: 24px;
+font-weight: 700;
+color: white;
+margin-top: 20px;
+}
+
+.header-second-paragraph {
+color: white;
+margin-top: 20px;
+margin-bottom: 50px;
+font-weight: 500px;
+font-size: 1.4rem;
+}
+
+.header-button {
+background-color: var(--off-white);
+padding: 15px;
+color: var(--black);
+border: none;
+border-radius: 5px;
+font-weight: bold;
+font-size: 16px;
+box-shadow: 0px 4px 8px rgb(89,73,30,0.16);
+text-decoration: none;
+}
+.down-arrow {
+display: inline-block;
+width: 13px;
+height: 8px;
+background-image: url("../assets/icons/down-arrow.svg");
+background-size: contain;
+background-repeat: none;
+background-position: center;
+margin-left: 15px;
+}
+
+main {
+width: 100%;
+height: auto;
+background-color: var(--off-white);
+}
+
+.main-exchange-container {
+width: 100%;
+text-align: center;
+padding-top: 80px ;
+padding-bottom: 30px;
+}
+
+.main-exchange-container-title {
+width: 90%;
+min-width: 280px;
+max-width: 900px;
+font-weight: 700;
+font-size: 24px;
+margin: 0 auto;
+/* para poder usar margin 0 auto el contenedor que quieres poner al centro tiene que ser mas pequeno que el contenedor padre */
+}
+
+.main-exchange-container-bitcoin {
+width: 200px;
+height: 200px;
+}
+
+.main-exchange-container-title h2 {
+font-size: 24px;
+font-weight: 700;
+margin-top: 40px;
+margin-bottom: 30px;
+}
+.main-exchange-container-title p {
+color: #757575;
+font-size: 14px;
+}
+
+.main-table-container {
+/* padding-left: 00px; */
+display: flex;
+justify-content: space-between;
+padding-left: 50px;
+margin-top: 30px;
+overflow-x: scroll;
+overscroll-behavior-x:contain;
+overflow-x: scroll;
+scroll-snap-type: x mandatory;
+}
+
+.main-currency-table {
+scroll-snap-align: center;
+margin-left: 200px;
+margin-right: 100px;
+display: grid;
+font-family: "Inter" sans-serif;
+grid-template-columns: 100px 100px 20px;
+grid-template-rows: repeat(6, 1fr);
+grid-gap: 10px;
+grid-template-areas:
+"moneda . ."
+"Bitcoin Bitcoin-price arrow"
+"Ethereum Ethereum-price arrow"
+"Ripple Ripple-price  arrow"
+"Stellar Stellar-price arrow"
+"footer footer footer";
+}
+
+
+
+.main-currency-table-title {
+color: var(--bitcoin-orange);
+font-size: 18px;
+font-weight: 700;
+grid-area: moneda;
+justify-self: start;
+}
+
+.main-currency-table .Bitcoin {
+grid-area: Bitcoin ;
+font-size: 16px;
+font-weight: 500;
+color: var(--grey);
+justify-self: start;
+}
+.main-currency-table .Ethereum {
+grid-area: Ethereum ;
+font-size: 16px;
+font-weight: 500;
+color: var(--grey);
+justify-self: start;
+}
+.main-currency-table .Ripple {
+grid-area: Ripple ;
+font-size: 16px;
+font-weight: 500;
+color: var(--grey);
+justify-self: start;
+}
+.main-currency-table .Stellar {
+grid-area: Stellar ;
+font-size: 16px;
+font-weight: 500;
+color: var(--grey);
+justify-self: start;
+}
+
+.main-currency-table .image-container {
+grid-area: arrow;
+align-content: center;
+align-self: center;
+/* background-color: green; */
+}
+
+.main-currency-table .Bitcoin-price {
+grid-area: Bitcoin-price ;
+font-size: 14px;
+font-weight: 500;
+color: var(--dark-gray);
+justify-self: start;
+}
+.main-currency-table .Ethereum-price {
+grid-area: Ethereum-price ;
+font-size: 14px;
+font-weight: 500;
+justify-self: start;
+color: var(--dark-gray);
+}
+.main-currency-table .Ripple-price {
+grid-area: Ripple-price ;
+font-size: 14px;
+font-weight: 500;
+justify-self: start;
+color: var(--dark-gray);
+}
+.main-currency-table .Stellar-price {
+grid-area: Stellar-price ;
+font-size: 14px;
+font-weight: 500;
+justify-self: start;
+color: var(--dark-gray);
+}
+
+.main-currency-table span {
+display: inline-block;
+margin-left: 30px;
+width: 12px;
+height: 12px;
+background-position: center;
+background-repeat: no-repeat;
+background-size: contain;
+}
+
+.Bitcoin-price span, .Ripple-price span, .Stellar-price span {
+background-image: url("../assets/icons/trending-down.svg");
+}
+.Ethereum-price span {
+background-image: url("../assets/icons/trending-up.svg");
+}
+.main-table-currency-footer {
+grid-area: footer;
+font-size: 14px;
+font-weight: 500;
+color: var(--warm-black);
+background-color: var(--soft-orange);
+padding: 10px;
+border-radius: 8px;
+justify-self: start;
+}
+
+
+
+.main-commissions-table {
+scroll-snap-align: center;
+margin-right: 200px;
+display: grid;
+font-family: "Inter" sans-serif;
+grid-template-columns: 50px 100px 100px;
+grid-template-rows: repeat(6, 1fr);
+grid-gap: 10px;
+grid-template-areas:
+". commission  ."
+"arrow-commission Bitrade Bitrade-price"
+"arrow-commission Bitpreco Bitpreco-price"
+"arrow-commission Novadax Novadax-price"
+"arrow-commission Coinext Coinext-price"
+". commission-footer commission-footer";
+}
+
+.main-commissions-table-title{
+color: var(--secundary-blue);
+font-size: 18px;
+font-weight: 700;
+grid-area: commission;
+justify-self: start;
+}
+
+.main-commissions-table .Bitrade {
+grid-area: Bitrade ;
+font-size: 16px;
+font-weight: 500;
+color: var(--grey);
+justify-self: start;
+}
+.main-commissions-table .Bitpreco {
+grid-area: Bitpreco ;
+font-size: 16px;
+font-weight: 500;
+color: var(--grey);
+justify-self: start;
+}
+.main-commissions-table .Novadax {
+grid-area: Novadax ;
+font-size: 16px;
+font-weight: 500;
+color: var(--grey);
+justify-self: start;
+}
+.main-commissions-table .Coinext {
+grid-area: Coinext ;
+font-size: 16px;
+font-weight: 500;
+color: var(--grey);
+justify-self: start;
+}
+
+.main-commissions-table .image-container {
+    grid-area: arrow-commission;
+    align-self: center;
+    justify-self: start;
+    }
+
+.main-commissions-table .Bitrade-price {
+grid-area: Bitrade-price ;
+font-size: 14px;
+font-weight: 500;
+color: var(--dark-gray);
+justify-self: start;
+}
+.main-commissions-table .Bitpreco-price {
+grid-area: Bitpreco-price ;
+font-size: 14px;
+font-weight: 500;
+justify-self: start;
+color: var(--dark-gray);
+}
+.main-commissions-table .Novadax-price {
+grid-area: Novadax-price ;
+font-size: 14px;
+font-weight: 500;
+justify-self: start;
+color: var(--dark-gray);
+}
+.Coinext-price {
+grid-area: Coinext-price;
+font-size: 14px;
+font-weight: 500;
+justify-self: start;
+color: var(--dark-gray);
+}
+
+.main-table-commissions-footer {
+grid-area: commission-footer;
+font-size: 14px;
+font-weight: 500;
+color: var(--warm-black);
+background-color: var(--soft-blue);
+/* padding: 10px; */
+border-radius: 8px;
+justify-self: start;
+}
+
+.main-product-detail {
+background-color: var(--warm-black);
+width: 100%;
+margin-top: 30px;
+padding-bottom: 40px;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+/* text-align: center; */
+}
+
+.main-product-detail-icon {
+background-image: url("../assets/icons/batata.svg");
+display: inline-block;
+width: 60px;
+height: auto;
+background-position: center;
+background-repeat: no-repeat;
+background-size: contain;
+
+position: absolute;
+left: 40%;
+top: 1080px;
+}
+
+.main-product-detail-container-title {
+position: relative;
+margin-top: 50px;
+margin-bottom: 30px;
+/* background-color: red; */
+text-align: center;
+width: 90%;
+}
+.main-product-detail-title {
+color: var(--just-white);
+font-weight: 700;
+font-size: 24px;
+line-height: 26px;
+margin-bottom: 20px;
+}
+
+.main-product-detail-paragraph {
+color: var(--dark-gray);
+font-size: 14px;
+}
+
+.main-cards-container {
+width: 90%;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+height: auto;
+}
+
+.card-container {
+background-color: var(--black);
+width: 90%;
+/* height: px; */
+margin-bottom: 20px;
+border-radius: 5px;
+display: flex;
+flex-direction: column;
+align-items: start;
+padding-left: 20px;
+padding-top: 10px;
+box-shadow: 0px 2px 5px rgb(89,73,30,0.16);
+}
+.card-container-Time {
+background-image: url("../assets/icons/clock.svg");
+background-position: center;
+background-repeat: no-repeat;
+background-size: contain;
+width: 30px;
+height: 30px;
+}
+.card-container-eye {
+background-image: url("../assets/icons/eye.svg");
+background-position: center;
+background-repeat: no-repeat;
+background-size: contain;
+width: 30px;
+height: 30px;
+}
+
+.card-container-dollar {
+background-image: url("../assets/icons/dollar-sign.svg");
+background-position: center;
+background-repeat: no-repeat;
+background-size: contain;
+width: 30px;
+height: 30px;
+}
+
+.card-container-check {
+background-image: url("../assets/icons/check-circle.svg");
+background-position: center;
+background-repeat: no-repeat;
+background-size: contain;
+width: 30px;
+height: 30px;
+}
+
+.card-container h2 {
+color: var(--just-white);
+font-size: 18px;
+margin-bottom: 10px;
+margin-top: 5px;
+
+}
+
+.card-container p {
+font-size: 14px;
+color: var(--grey);
+}
+
+.foto {
+background-image: url("../assets/img/bitcoinbaby.png");
+display: inline-block;
+width: 100%;
+height: 387px;
+background-position: center;
+background-size: cover;
+background-repeat: no-repeat;
+}
+
+.foto h2 {
+color: var(--off-white);
+font-size: 24px;
+font-weight: 700;
+text-align: center;
+line-height: 26px;
+margin-top:40px ;
+}
